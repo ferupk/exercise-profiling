@@ -63,11 +63,11 @@ Feru Pratama Kartajaya<br>
 
 4. Summary
    - Test Plan 1 (/all-student): 151520ms optimized down to 4438ms on average
-   - Test Plan 2 (/all-student-name): 1905ms optimized to 100ms on average
-   - Test Plan 3 (/highest-gpa): 88ms optimized to 11ms on average
+   - Test Plan 2 (/all-student-name): 1905ms optimized down to 100ms on average
+   - Test Plan 3 (/highest-gpa): 88ms optimized down to 11ms on average
    - Profiling 1 (/all-student): 3295ms optimized down to 1148ms on CPU time, ~65.2% upgrade on performance
-   - Profiling 2 (/all-student-name): 578ms optimized to 165ms on CPU time, ~71.5% upgrade on performance
-   - Profiling 3 (/highest-gpa): 224ms optimized to 84ms on CPU time, ~62.5% upgrade on performance
+   - Profiling 2 (/all-student-name): 578ms optimized down to 165ms on CPU time, ~71.5% upgrade on performance
+   - Profiling 3 (/highest-gpa): 224ms optimized down to 84ms on CPU time, ~62.5% upgrade on performance
 
 ## Reflection
 
@@ -141,11 +141,8 @@ other applications are running during testing, as well as doing all tests while 
 be cut from execution. An example of this would be the getAllStudentsWithCourses method. In the previous implementation,
 a nested for-loop is used to create the list of StudentCourse objects. This takes a huge amount of processing time and was
 the biggest bottleneck in the entire application. However, this implementation was actually redundant as the same process
-could be done by simply fetching the contents of the StudentCourseRepository.
-<br>
-If there is no unnecessary code that could be removed, I would then try and figure out alternative solutions to the implementation
-that already exists. This can be seen in my implementation of the joinStudentNames method. Simply changing the use of a
-StringBuilder object to build the result instead of a normal String makes a significant difference in performance.
-<br>
-To ensure the correctness of the program, I would compare the query results between the old and new implementation as I
-refactor my code.
+could be done by simply fetching the contents of the StudentCourseRepository. If there is no unnecessary code that could
+be removed, I would then try and figure out alternative solutions to the implementation that already exists. This can be
+seen in my implementation of the joinStudentNames method. Simply changing the use of a StringBuilder object to build the
+result instead of a normal String makes a significant difference in performance. To ensure the correctness of the program,
+I would compare the query results between the old and new implementation as I refactor my code.
